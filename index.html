@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RS3 My Brudda</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>RS3 My Brudda</h1>
+    <p class="subtitle">Welcome to the home of the RS3 Cuzzys.</p>
+</header>
+
+<section class="about">
+    <h2>Who are the RS3 Cuzzys?</h2>
+    <p>The RS3 Cuzzys are the most dangerous people you could ever meet. Take caution when talking to one!</p>
+</section>
+
+<section class="video-side">
+    <video width="450" controls>
+        <source src="rs3_video.mp4" type="video/mp4">
+    </video>
+    <video width="450" controls>
+        <source src="rs3_video2.mp4" type="video/mp4">
+    </video>
+    <video width="450" controls>
+        <source src="rs3_video3.mp4" type="video/mp4">
+    </video>
+</section>
+
+<!-- Image Gallery Slider -->
+<section class="gallery">
+    <h2>RS3 Gallery</h2>
+    <div class="slider">
+        <button onclick="prevSlide()">❮</button>
+        <img id="sliderImage" src="images/rs3_green.jpg" alt="RS3 Car">
+        <button onclick="nextSlide()">❯</button>
+    </div>
+</section>
+
+<!-- Dynamic Car Selector -->
+<section class="dynamic">
+    <h2>Switch Cars</h2>
+    <select id="carSelector" onchange="changeCar()">
+        <option value="images/rs3_green.jpg">Green RS3</option>
+        <option value="images/rs3_blue.jpg">Blue RS3</option>
+        <option value="images/rs3_red.jpg">Red RS3</option>
+        <option value="images/rs3_hatch.jpg">Hatch Back RS3</option>
+    </select>
+    <br><br>
+    <img id="dynamicCar" src="images/rs3_green.jpg" alt="Selected RS3" width="400">
+</section>
+
+<!-- Sound Buttons -->
+<section class="sound">
+    <h2>Press for motivation</h2>
+    <button onclick="playRS3()">🔊 RS3 MY BRUDDA</button>
+    <button onclick="playRev()">🔥 ENGINE REV</button>
+    <button onclick="playCuzzy()">🔊 RS3 CUZZY</button>
+</section>
+
+<!-- Join Form -->
+<section class="join">
+    <h2>Join the RS3 Cuzzys</h2>
+    <form onsubmit="return joinCuzzys()">
+        <input type="text" id="name" placeholder="Your Name" required><br><br>
+        <input type="email" id="email" placeholder="Your Email" required><br><br>
+        <button type="submit">Join Now 🚗</button>
+    </form>
+    <p id="formMessage"></p>
+</section>
+
+<footer>
+    <p>© 2026 RS3 Cuzzys. Built different Cuz ygm g.</p>
+</footer>
+
+<!-- Audio -->
+<audio id="rs3Sound" src="rs3.mp3"></audio>
+<audio id="revSound" src="rev.mp3"></audio>
+<audio id="cuzzySound" src="cuzzy.mp3"></audio>
+
+<!-- JavaScript -->
+<script>
+    // Sound Functions
+    const rs3 = document.getElementById("rs3Sound");
+    const rev = document.getElementById("revSound");
+    function playRS3() {
+        rev.pause();
+        rev.currentTime = 0;
+        rs3.play();
+    }
+    function playRev() {
+        rs3.pause();
+        rs3.currentTime = 0;
+        rev.play();
+    }
+    function playCuzzy() {
+        rs3.pause();
+        rs3.currentTime = 0;
+        rev.pause();
+        rev.currentTime = 0;
+        document.getElementById("cuzzySound").play();
+    }
+
+    // Gallery Slider
+    const slides = [
+        "images/rs3_green.jpg",
+        "images/rs3_blue.jpg",
+        "images/rs3_red.jpg",
+        "images/rs3_hatch.jpg"
+    ];
+    let currentSlide = 0;
+    const sliderImg = document.getElementById("sliderImage");
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        sliderImg.src = slides[currentSlide];
+    }
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        sliderImg.src = slides[currentSlide];
+    }
+
+    // Dynamic Car Selector
+    function changeCar() {
+        const car = document.getElementById("carSelector").value;
+        document.getElementById("dynamicCar").src = car;
+    }
+
+    // Join Form
+    function joinCuzzys() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        document.getElementById("formMessage").innerText = 
+            `${name} You are officially an RS3 Cuzzy, Cmon bro ygm, Confirmation has been sent to ${email}.`;
+        return false;
+    }
+</script>
+</body>
+</html>

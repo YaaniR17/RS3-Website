@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(90deg, #00ff99, #00ccff);
+    color: black;
+    padding: 40px 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+}
+
+section {
+    padding: 40px 20px;
+}
+
+.video video {
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,255,150,0.5);
+}
+
+.gallery .slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,255,150,0.4);
+}
+
+.gallery button {
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: #00ff99;
+    cursor: pointer;
+}
+
+.dynamic select {
+    font-size: 1.1rem;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+.dynamic img {
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,255,150,0.4);
+}
+
+.sound button {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    margin: 5px;
+    border: none;
+    border-radius: 12px;
+    background: #00ff99;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0,255,150,0.6);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sound button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0,255,150,1);
+}
+
+.join input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border: none;
+    margin: 5px 0;
+}
+
+.join button {
+    padding: 12px 25px;
+    border-radius: 12px;
+    border: none;
+    background: #00ff99;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0,255,150,0.6);
+}
+
+footer {
+    background: #111;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.video video {
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,255,150,0.5);
+    margin-bottom: 30px;
+}
+
+.video-side {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
